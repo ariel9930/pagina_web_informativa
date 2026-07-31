@@ -19,6 +19,14 @@
     font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
 }
 
+/* Solución definitiva para evitar scroll horizontal en móviles */
+html, body {
+    width: 100%;
+    max-width: 100%;
+    overflow-x: hidden;
+    position: relative;
+}
+
 ::-webkit-scrollbar {
     width: 8px;
 }
@@ -37,17 +45,15 @@ body {
     background-color: var(--bg-color);
     color: var(--text-main);
     line-height: 1.6;
-    overflow-x: hidden;
-    position: relative;
 }
 
-/* Patrón Cyber-Grid de fondo */
+/* Patrón Cyber-Grid de fondo sin desbordamiento */
 .cyber-grid {
     position: fixed;
     top: 0;
     left: 0;
-    width: 100vw;
-    height: 100vh;
+    width: 100%;
+    height: 100%;
     background-image: 
         linear-gradient(to right, rgba(255, 255, 255, 0.02) 1px, transparent 1px),
         linear-gradient(to bottom, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
@@ -71,15 +77,15 @@ body {
     top: -100px;
     left: 50%;
     transform: translateX(-50%);
-    width: 700px;
+    width: min(700px, 100vw);
     height: 700px;
     background: var(--green-accent);
 }
 
 .glow-2 {
     top: 800px;
-    right: -100px;
-    width: 550px;
+    right: 0; /* Ajustado para que no sobresalga del viewport */
+    width: min(550px, 100vw);
     height: 550px;
     background: var(--purple-accent);
 }
@@ -94,7 +100,7 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    flex-wrap: wrap; /* Flex-wrap añadido para pantallas estrechas */
+    flex-wrap: wrap;
     gap: 16px;
     padding: 16px 8%;
     background-color: rgba(6, 9, 19, 0.85);
@@ -135,6 +141,7 @@ header {
     font-weight: 800;
     color: var(--text-main);
     letter-spacing: -0.5px;
+    word-break: break-word;
 }
 
 .logo-text span {
@@ -210,11 +217,12 @@ header {
 }
 
 .hero h1 {
-    font-size: 3.3rem;
+    font-size: clamp(2rem, 5vw, 3.3rem); /* Escala suavemente en pantallas pequeñas */
     line-height: 1.2;
     margin-bottom: 24px;
     font-weight: 800;
     letter-spacing: -1px;
+    overflow-wrap: break-word;
 }
 
 .hero h1 span {
@@ -227,6 +235,7 @@ header {
     color: var(--text-muted);
     font-size: 1.15rem;
     margin-bottom: 32px;
+    overflow-wrap: break-word;
 }
 
 /* ================= SECTIONS & CARDS ================= */
@@ -238,9 +247,10 @@ header {
 
 .section-title {
     text-align: center;
-    font-size: 2.2rem;
+    font-size: clamp(1.6rem, 4vw, 2.2rem);
     margin-bottom: 45px;
     font-weight: 800;
+    overflow-wrap: break-word;
 }
 
 .section-title span {
@@ -251,15 +261,9 @@ header {
     color: #ffffff;
 }
 
-.grid-2 {
+.grid-2, .grid-3 {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-    gap: 28px;
-}
-
-.grid-3 {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 280px), 1fr));
     gap: 28px;
 }
 
@@ -329,6 +333,7 @@ header {
     color: var(--text-muted);
     font-size: 0.98rem;
     line-height: 1.7;
+    overflow-wrap: break-word;
 }
 
 .card-highlight {
@@ -347,7 +352,7 @@ header {
 .ods-header {
     display: flex;
     align-items: center;
-    flex-wrap: wrap; /* Evita desbordamiento en móviles estrechos */
+    flex-wrap: wrap;
     gap: 18px;
 }
 
@@ -360,6 +365,7 @@ header {
     box-shadow: 0 6px 16px rgba(0, 0, 0, 0.4);
     transition: all 0.35s ease;
     background-color: #1e293b;
+    flex-shrink: 0;
 }
 
 .card-ods:hover .ods-img {
@@ -434,23 +440,15 @@ footer {
 @media (max-width: 768px) {
     header {
         padding: 14px 5%;
-        justify-content: center; /* Centra el logo y botón si pasan a 2 filas en móviles pequeños */
-    }
-
-    .hero h1 {
-        font-size: 2.2rem;
+        justify-content: space-between;
     }
 
     .hero {
-        padding: 60px 5% 30px;
+        padding: 50px 5% 30px;
     }
 
     .container {
-        padding: 30px 5%;
-    }
-
-    .grid-2, .grid-3 {
-        grid-template-columns: 1fr; /* Cambia a una sola columna responsiva en pantallas chicas */
+        padding: 25px 5%;
     }
 
     .logo-img {
@@ -458,16 +456,16 @@ footer {
     }
 
     .logo-text {
-        font-size: 1.15rem;
+        font-size: 1.1rem;
     }
 
     .ods-header {
         flex-direction: row;
-        flex-wrap: wrap;
+        flex-wrap: nowrap;
     }
 
     .ods-img {
-        width: 60px;
-        height: 60px;
+        width: 56px;
+        height: 56px;
     }
 }
