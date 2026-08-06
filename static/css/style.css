@@ -1,15 +1,15 @@
 :root {
-    --bg-color: #060913;
-    --card-bg: rgba(15, 23, 42, 0.7);
-    --input-bg: #1e293b;
-    --text-main: #f8fafc;
-    --text-muted: #94a3b8;
+    --bg-color: #050b11;
+    --card-bg: rgba(10, 18, 28, 0.75);
+    --input-bg: #0f1923;
+    --text-main: #ffffff;
+    --text-muted: #8b9eb0;
     --green-accent: #00e676;
-    --green-glow: rgba(0, 230, 118, 0.2);
+    --green-glow: rgba(0, 230, 118, 0.25);
     --purple-accent: #a855f7;
     --border-color: rgba(255, 255, 255, 0.08);
-    --border-hover: rgba(0, 230, 118, 0.5);
-    --shadow-glow: 0 10px 40px -10px rgba(0, 230, 118, 0.3);
+    --border-hover: rgba(0, 230, 118, 0.4);
+    --shadow-glow: 0 10px 40px -10px rgba(0, 230, 118, 0.25);
 }
 
 * {
@@ -19,11 +19,21 @@
     font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
 }
 
-/* Solución definitiva para evitar scroll horizontal en móviles */
 html, body {
     width: 100%;
+    height: 100%;
     max-width: 100%;
-    overflow-x: hidden;
+    overflow-x: hidden !important;
+    position: relative;
+    background-color: var(--bg-color);
+    color: var(--text-main);
+    line-height: 1.6;
+}
+
+.page-wrapper {
+    width: 100%;
+    max-width: 100%;
+    overflow: hidden;
     position: relative;
 }
 
@@ -41,13 +51,7 @@ html, body {
     background: var(--green-accent);
 }
 
-body {
-    background-color: var(--bg-color);
-    color: var(--text-main);
-    line-height: 1.6;
-}
-
-/* Patrón Cyber-Grid de fondo sin desbordamiento */
+/* ================= FONDO DE LA IMAGEN (CUADRÍCULA + RESPLANDOR VERDE) ================= */
 .cyber-grid {
     position: fixed;
     top: 0;
@@ -55,44 +59,36 @@ body {
     width: 100%;
     height: 100%;
     background-image: 
-        linear-gradient(to right, rgba(255, 255, 255, 0.02) 1px, transparent 1px),
-        linear-gradient(to bottom, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
-    background-size: 40px 40px;
+        linear-gradient(to right, rgba(0, 230, 118, 0.08) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(0, 230, 118, 0.08) 1px, transparent 1px);
+    background-size: 32px 32px;
     z-index: -2;
     pointer-events: none;
 }
 
-/* Esferas de luz ambiental */
+/* Luz focalizada en la esquina superior izquierda */
 .glow-sphere {
-    position: absolute;
+    position: fixed;
     border-radius: 50%;
-    filter: blur(140px);
+    filter: blur(120px);
     z-index: -1;
     pointer-events: none;
-    opacity: 0.22;
-    animation: floatGlow 10s ease-in-out infinite alternate;
 }
 
 .glow-1 {
-    top: -100px;
-    left: 50%;
-    transform: translateX(-50%);
-    width: min(700px, 100vw);
+    top: -150px;
+    left: -100px;
+    width: 700px;
     height: 700px;
-    background: var(--green-accent);
+    background: radial-gradient(circle, rgba(0, 230, 118, 0.35) 0%, rgba(0, 230, 118, 0.05) 60%, transparent 80%);
 }
 
 .glow-2 {
-    top: 800px;
-    right: 0; /* Ajustado para que no sobresalga del viewport */
-    width: min(550px, 100vw);
-    height: 550px;
-    background: var(--purple-accent);
-}
-
-@keyframes floatGlow {
-    0% { transform: translateY(0) scale(1); }
-    100% { transform: translateY(40px) scale(1.08); }
+    bottom: -150px;
+    right: -100px;
+    width: 600px;
+    height: 600px;
+    background: radial-gradient(circle, rgba(0, 230, 118, 0.15) 0%, transparent 70%);
 }
 
 /* ================= HEADER & LOGO ================= */
@@ -102,8 +98,8 @@ header {
     align-items: center;
     flex-wrap: wrap;
     gap: 16px;
-    padding: 16px 8%;
-    background-color: rgba(6, 9, 19, 0.85);
+    padding: 18px 8%;
+    background-color: rgba(5, 11, 17, 0.85);
     backdrop-filter: blur(20px);
     -webkit-backdrop-filter: blur(20px);
     position: sticky;
@@ -121,27 +117,16 @@ header {
 }
 
 .logo-img {
-    height: 48px;
+    height: 40px;
     width: auto;
     object-fit: contain;
-    border-radius: 10px;
-    border: 1px solid rgba(255, 255, 255, 0.15);
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
-    transition: all 0.3s ease;
-}
-
-.logo:hover .logo-img {
-    border-color: var(--green-accent);
-    box-shadow: 0 0 20px var(--green-glow);
-    transform: scale(1.04);
 }
 
 .logo-text {
-    font-size: 1.45rem;
+    font-size: 1.5rem;
     font-weight: 800;
     color: var(--text-main);
     letter-spacing: -0.5px;
-    word-break: break-word;
 }
 
 .logo-text span {
@@ -149,31 +134,28 @@ header {
 }
 
 .lang-btn {
-    background-color: rgba(30, 41, 59, 0.7);
-    color: var(--green-accent);
-    border: 1px solid rgba(0, 230, 118, 0.4);
-    padding: 8px 18px;
+    background-color: rgba(255, 255, 255, 0.05);
+    color: var(--text-main);
+    border: 1px solid var(--border-color);
+    padding: 8px 20px;
     border-radius: 30px;
     cursor: pointer;
     font-weight: 600;
-    font-size: 0.85rem;
+    font-size: 0.88rem;
     transition: all 0.3s ease;
     display: flex;
     align-items: center;
-    flex-wrap: wrap;
     gap: 8px;
 }
 
 .lang-btn:hover {
-    background-color: var(--green-accent);
-    color: var(--bg-color);
-    box-shadow: 0 0 20px rgba(0, 230, 118, 0.4);
-    transform: translateY(-2px);
+    border-color: var(--green-accent);
+    color: var(--green-accent);
 }
 
 /* ================= HERO SECTION ================= */
 .hero {
-    padding: 90px 8% 50px;
+    padding: 80px 8% 50px;
     text-align: center;
     max-width: 900px;
     margin: 0 auto;
@@ -189,16 +171,14 @@ header {
 .badge {
     display: inline-flex;
     align-items: center;
-    flex-wrap: wrap;
     gap: 10px;
-    background-color: var(--green-glow);
+    background-color: rgba(0, 230, 118, 0.12);
     color: var(--green-accent);
-    border: 1px solid rgba(0, 230, 118, 0.35);
+    border: 1px solid rgba(0, 230, 118, 0.3);
     padding: 8px 20px;
     border-radius: 30px;
     font-size: 0.85rem;
     font-weight: 600;
-    backdrop-filter: blur(10px);
 }
 
 .pulse-dot {
@@ -206,36 +186,27 @@ header {
     height: 8px;
     background-color: var(--green-accent);
     border-radius: 50%;
-    box-shadow: 0 0 0 0 rgba(0, 230, 118, 0.7);
-    animation: pulse 2s infinite;
-}
-
-@keyframes pulse {
-    0% { box-shadow: 0 0 0 0 rgba(0, 230, 118, 0.7); }
-    70% { box-shadow: 0 0 0 10px rgba(0, 230, 118, 0); }
-    100% { box-shadow: 0 0 0 0 rgba(0, 230, 118, 0); }
+    box-shadow: 0 0 10px var(--green-accent);
 }
 
 .hero h1 {
-    font-size: clamp(2rem, 5vw, 3.3rem); /* Escala suavemente en pantallas pequeñas */
-    line-height: 1.2;
+    font-size: clamp(2.2rem, 5vw, 3.5rem);
+    line-height: 1.15;
     margin-bottom: 24px;
     font-weight: 800;
     letter-spacing: -1px;
-    overflow-wrap: break-word;
 }
 
 .hero h1 span {
-    background: linear-gradient(135deg, #00e676, #38bdf8);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
+    color: var(--green-accent);
+    background: none;
+    -webkit-text-fill-color: initial;
 }
 
 .hero p {
     color: var(--text-muted);
     font-size: 1.15rem;
     margin-bottom: 32px;
-    overflow-wrap: break-word;
 }
 
 /* ================= SECTIONS & CARDS ================= */
@@ -250,15 +221,10 @@ header {
     font-size: clamp(1.6rem, 4vw, 2.2rem);
     margin-bottom: 45px;
     font-weight: 800;
-    overflow-wrap: break-word;
 }
 
 .section-title span {
     color: var(--green-accent);
-}
-
-.title-white {
-    color: #ffffff;
 }
 
 .grid-2, .grid-3 {
@@ -274,53 +240,28 @@ header {
     padding: 32px;
     backdrop-filter: blur(16px);
     -webkit-backdrop-filter: blur(16px);
-    transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+    transition: all 0.35s ease;
     position: relative;
     overflow: hidden;
 }
 
-.card::after {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 2px;
-    background: linear-gradient(90deg, transparent, var(--green-accent), transparent);
-    opacity: 0;
-    transition: opacity 0.3s ease;
-}
-
 .card:hover {
-    transform: translateY(-8px);
+    transform: translateY(-5px);
     border-color: var(--border-hover);
     box-shadow: var(--shadow-glow);
-}
-
-.card:hover::after {
-    opacity: 1;
 }
 
 .card-icon {
     width: 48px;
     height: 48px;
-    background: var(--green-glow);
-    border: 1px solid rgba(0, 230, 118, 0.3);
+    background: rgba(0, 230, 118, 0.1);
+    border: 1px solid rgba(0, 230, 118, 0.25);
     border-radius: 12px;
     display: flex;
     align-items: center;
     justify-content: center;
     color: var(--green-accent);
     margin-bottom: 20px;
-}
-
-.card-header-icon {
-    display: flex;
-    align-items: center;
-    flex-wrap: wrap;
-    gap: 12px;
-    margin-bottom: 14px;
-    color: var(--green-accent);
 }
 
 .card h3 {
@@ -333,16 +274,9 @@ header {
     color: var(--text-muted);
     font-size: 0.98rem;
     line-height: 1.7;
-    overflow-wrap: break-word;
 }
 
-.card-highlight {
-    background: linear-gradient(135deg, rgba(15, 23, 42, 0.9) 0%, rgba(30, 41, 59, 0.75) 100%);
-    border: 1px solid rgba(0, 230, 118, 0.35);
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
-}
-
-/* ================= DISEÑO ODS CON IMÁGENES ================= */
+/* ================= ODS CARDS ================= */
 .card-ods {
     display: flex;
     flex-direction: column;
@@ -352,7 +286,6 @@ header {
 .ods-header {
     display: flex;
     align-items: center;
-    flex-wrap: wrap;
     gap: 18px;
 }
 
@@ -362,22 +295,8 @@ header {
     object-fit: cover;
     border-radius: 14px;
     border: 2px solid rgba(255, 255, 255, 0.1);
-    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.4);
-    transition: all 0.35s ease;
     background-color: #1e293b;
     flex-shrink: 0;
-}
-
-.card-ods:hover .ods-img {
-    transform: scale(1.08) rotate(-2deg);
-    border-color: var(--green-accent);
-    box-shadow: 0 0 20px rgba(0, 230, 118, 0.3);
-}
-
-.ods-title-group {
-    display: flex;
-    flex-direction: column;
-    gap: 4px;
 }
 
 .ods-badge {
@@ -406,7 +325,7 @@ header {
 }
 
 .stat-box:hover {
-    transform: translateY(-8px);
+    transform: translateY(-5px);
     border-color: var(--border-hover);
     box-shadow: var(--shadow-glow);
 }
@@ -414,15 +333,57 @@ header {
 .stat-number {
     font-size: 3rem;
     font-weight: 800;
-    background: linear-gradient(135deg, #00e676, #38bdf8);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
+    color: var(--green-accent);
     margin-bottom: 10px;
 }
 
 .stat-box p {
     color: var(--text-muted);
     font-size: 0.95rem;
+}
+
+/* ================= SECCIÓN EQUIPO ================= */
+.group-section-card {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 32px;
+    align-items: center;
+}
+
+.team-list {
+    list-style: none;
+    margin-top: 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.team-list li {
+    font-size: 0.92rem;
+    color: var(--text-muted);
+    position: relative;
+    padding-left: 20px;
+}
+
+.team-list li::before {
+    content: "▹";
+    position: absolute;
+    left: 0;
+    color: var(--green-accent);
+}
+
+.group-photo-container {
+    width: 100%;
+    height: 320px;
+    border-radius: 14px;
+    overflow: hidden;
+    border: 1px solid var(--border-hover);
+}
+
+.group-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
 }
 
 /* ================= FOOTER ================= */
@@ -433,14 +394,24 @@ footer {
     color: var(--text-muted);
     font-size: 0.9rem;
     margin-top: 60px;
-    background: rgba(6, 9, 19, 0.95);
+    background: rgba(5, 11, 17, 0.95);
 }
 
 /* ================= RESPONSIVE ================= */
+@media (max-width: 868px) {
+    .group-section-card {
+        grid-template-columns: 1fr;
+        gap: 24px;
+    }
+
+    .group-photo-container {
+        height: 240px;
+    }
+}
+
 @media (max-width: 768px) {
     header {
         padding: 14px 5%;
-        justify-content: space-between;
     }
 
     .hero {
@@ -451,64 +422,151 @@ footer {
         padding: 25px 5%;
     }
 
-    .logo-img {
-        height: 38px;
-    }
-
-    .logo-text {
-        font-size: 1.1rem;
-    }
-
-    .ods-header {
-        flex-direction: row;
-        flex-wrap: nowrap;
-    }
-
-    .ods-img {
-        width: 56px;
-        height: 56px;
+    .glow-1 {
+        width: 350px;
+        height: 350px;
+        top: -50px;
+        left: -50px;
     }
 }
 
-/* 1. Modificación a HTML y BODY */
-html, body {
+:root {
+    --bg-color: #04090f;
+    --card-bg: rgba(10, 18, 28, 0.75);
+    --text-main: #ffffff;
+    --text-muted: #8b9eb0;
+    --green-accent: #00e676;
+    --border-color: rgba(255, 255, 255, 0.08);
+}
+
+* {
     margin: 0;
     padding: 0;
-    width: 100%;
-    height: 100%;
-    overflow-x: hidden !important;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
 }
 
-/* 2. El contenedor que frena el scroll horizontal en móviles reales */
-.page-wrapper {
+html, body {
     width: 100%;
-    max-width: 100%;
-    overflow: hidden;
+    min-height: 100vh;
+    background-color: var(--bg-color) !important;
+    color: var(--text-main);
+    line-height: 1.6;
     position: relative;
 }
 
-/* 3. Ajuste para las esferas de luz que rompen el canvas en celular */
-.glow-sphere {
-    position: absolute;
-    border-radius: 50%;
-    filter: blur(100px); /* Un blur muy alto en móviles causa desbordamiento de renderizado */
-    z-index: -1;
+/* ================= CUADRÍCULA CIBERNÉTICA VERDE ================= */
+.cyber-grid {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-image: 
+        linear-gradient(to right, rgba(0, 230, 118, 0.12) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(0, 230, 118, 0.12) 1px, transparent 1px);
+    background-size: 35px 35px;
+    z-index: 0; /* Asegura que se vea al fondo */
     pointer-events: none;
-    opacity: 0.22;
 }
 
-/* Ajusta el tamaño de las luces en celulares para que no empujen el borde */
-@media (max-width: 768px) {
-    .glow-1 {
-        width: 300px !important;
-        height: 300px !important;
-        top: -50px;
-    }
+/* ================= LUZ VERDE FOCALIZADA ================= */
+.glow-sphere {
+    position: fixed;
+    border-radius: 50%;
+    filter: blur(90px);
+    z-index: 1;
+    pointer-events: none;
+}
 
-    .glow-2 {
-        width: 250px !important;
-        height: 250px !important;
-        right: 0 !important;
-        left: auto;
-    }
+.glow-1 {
+    top: -120px;
+    left: -80px;
+    width: 550px;
+    height: 550px;
+    background: radial-gradient(circle, rgba(0, 230, 118, 0.4) 0%, rgba(0, 230, 118, 0.1) 50%, transparent 75%);
+}
+
+.glow-2 {
+    bottom: -100px;
+    right: -80px;
+    width: 500px;
+    height: 500px;
+    background: radial-gradient(circle, rgba(0, 230, 118, 0.2) 0%, transparent 70%);
+}
+
+/* Envoltorio principal para quedar sobre el fondo */
+.page-wrapper, header, .hero, .container {
+    position: relative;
+    z-index: 2;
+}
+
+/* ================= HEADER ================= */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 18px 8%;
+    background-color: rgba(4, 9, 15, 0.85);
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    border-bottom: 1px solid var(--border-color);
+}
+
+.lang-btn {
+    background-color: rgba(255, 255, 255, 0.05);
+    color: var(--text-main);
+    border: 1px solid var(--border-color);
+    padding: 8px 20px;
+    border-radius: 30px;
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 0.88rem;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: all 0.3s ease;
+}
+
+.lang-btn:hover {
+    border-color: var(--green-accent);
+    color: var(--green-accent);
+}
+
+/* ================= HERO TEXTS ================= */
+.hero {
+    padding: 80px 8% 50px;
+    text-align: center;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    background-color: rgba(0, 230, 118, 0.08);
+    color: var(--green-accent);
+    border: 1px solid rgba(0, 230, 118, 0.3);
+    padding: 8px 20px;
+    border-radius: 30px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    margin-bottom: 24px;
+}
+
+.hero h1 {
+    font-size: clamp(2.2rem, 5vw, 3.5rem);
+    line-height: 1.15;
+    margin-bottom: 24px;
+    font-weight: 800;
+}
+
+.hero h1 span, .text-green {
+    color: var(--green-accent) !important;
+}
+
+.hero p {
+    color: var(--text-muted);
+    font-size: 1.15rem;
 }
