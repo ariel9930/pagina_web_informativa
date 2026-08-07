@@ -5,35 +5,41 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>JunaWeb - Información del Proyecto</title>
-    <link rel="stylesheet" href="static/css/style.css">
-    <!-- Cambia tu link de CSS agregándole el ?v=2 al final -->
-<link rel="stylesheet" href="tu_archivo.css?v=2">
+    <link rel="stylesheet" href="static/css/style.css?v=11">
 </head>
 
 <body>
-    <!-- ELEMENTOS DEL FONDO (Obligatorios para la cuadrícula y las luces) -->
+    <!-- ELEMENTOS DEL FONDO -->
     <div class="cyber-grid"></div>
     <div class="glow-sphere glow-1"></div>
     <div class="glow-sphere glow-2"></div>
 
     <div class="page-wrapper">
-    <div class="page-wrapper">
-
-        <div class="cyber-grid"></div>
-        <div class="glow-sphere glow-1"></div>
-        <div class="glow-sphere glow-2"></div>
-
+        <!-- HEADER -->
         <header>
             <a href="index.html" class="logo">
                 <img src="static/images/logo.png" alt="JunaWeb Logo" class="logo-img">
                 <span class="logo-text">Juna<span>Web</span></span>
             </a>
-            <div class="nav-links">
+            <div class="nav-controls">
+                <!-- SWITCH DE TEMA LIGHT/DARK -->
+                <button id="toggle-theme" class="theme-btn" title="Cambiar Tema">
+                    <svg class="sun-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                        stroke-width="2">
+                        <circle cx="12" cy="12" r="5" />
+                        <path
+                            d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42" />
+                    </svg>
+                    <svg class="moon-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                        stroke-width="2">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" />
+                    </svg>
+                </button>
+                <!-- TRADUCTOR -->
                 <button id="toggle-lang" class="lang-btn">
                     <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                         <circle cx="12" cy="12" r="10" />
-                        <path
-                            d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z" />
+                        <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10z" />
                         <path d="M2 12h20" />
                     </svg>
                     <span id="lang-label">English</span>
@@ -41,6 +47,7 @@
             </div>
         </header>
 
+        <!-- HERO SECTION -->
         <section class="hero">
             <div class="badge-wrapper">
                 <span class="badge">
@@ -60,6 +67,33 @@
             </p>
         </section>
 
+        <!-- TERMINAL CYBERPUNK INTERACTIVA -->
+        <section class="container">
+            <div class="terminal-window card">
+                <div class="terminal-header">
+                    <div class="terminal-dots">
+                        <span class="dot red"></span>
+                        <span class="dot yellow"></span>
+                        <span class="dot green"></span>
+                    </div>
+                    <div class="terminal-title">junaweb-system-core v2.4 -- bash</div>
+                </div>
+                <div class="terminal-body" id="terminal-body">
+                    <div class="terminal-line"><span class="t-prefix">sys@junaweb:~$</span> initialising core system
+                        modules...</div>
+                    <div class="terminal-line"><span class="t-prefix">sys@junaweb:~$</span> camera_scanner_feed: <span
+                            class="t-green">ONLINE [TRIPOD_01]</span></div>
+                    <div class="terminal-line"><span class="t-prefix">sys@junaweb:~$</span> sync_database: <span
+                            class="t-green">ACTIVE (PAE JUNAEB API)</span></div>
+                    <div class="terminal-line"><span class="t-prefix">sys@junaweb:~$</span> anti_spoofing_guard: <span
+                            class="t-green">ENABLED</span></div>
+                    <div class="terminal-line"><span class="t-prefix">sys@junaweb:~$</span> listening for incoming QR
+                        scans...</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECCIÓN 1: RESUMEN EJECUTIVO -->
         <section class="container">
             <h2 class="section-title">
                 <span data-es="1. Resumen" data-en="1. Executive">1. Resumen</span>
@@ -79,19 +113,81 @@
                     data-en="This project proposes the development and implementation of a web platform integrated with hardware aimed at optimizing the logistics of the School Feeding Program (PAE - JUNAEB). The system solves slow lines and student impersonation through digital reservations and an innovative automated control point: a tripod-mounted scanner that autonomously controls student flow.">
                     El presente proyecto propone el desarrollo e implementación de una plataforma web con integración de
                     hardware destinada a la optimización logística del Programa de Alimentación Escolar (PAE - JUNAEB).
-                    El
-                    sistema soluciona las filas lentas y la suplantación en los comedores mediante reservas digitales y
-                    un
-                    innovador punto de control automatizado: un escáner montado en un trípode para controlar el flujo de
-                    los
-                    estudiantes de forma autónoma.
+                    El sistema soluciona las filas lentas y la suplantación en los comedores mediante reservas digitales
+                    y
+                    un innovador punto de control automatizado: un escáner montado en un trípode para controlar el flujo
+                    de
+                    los estudiantes de forma autónoma.
                 </p>
             </div>
         </section>
 
+        <!-- SECCIÓN 2: CÓMO FUNCIONA -->
         <section class="container">
             <h2 class="section-title">
-                <span data-es="2. Estación" data-en="2. Tripod">2. Estación</span>
+                <span data-es="2. Cómo" data-en="2. How It">2. Cómo</span>
+                <span class="title-white" data-es="Funciona" data-en="Works">Funciona</span>
+            </h2>
+            <div class="grid-3 steps-grid">
+                <div class="card step-card">
+                    <div class="step-number">01</div>
+                    <div class="card-icon">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
+                            <rect x="5" y="2" width="14" height="20" rx="2" ry="2" />
+                            <line x1="12" y1="18" x2="12.01" y2="18" />
+                        </svg>
+                    </div>
+                    <h3 data-es="Reserva Digital" data-en="Digital Reservation">Reserva Digital</h3>
+                    <p data-es="El estudiante ingresa a la plataforma web desde su teléfono y confirma su asistencia al almuerzo con un clic."
+                        data-en="The student logs into the web platform from their phone and confirms lunch attendance with a single click.">
+                        El estudiante ingresa a la plataforma web desde su teléfono y confirma su asistencia al almuerzo
+                        con un clic.
+                    </p>
+                </div>
+
+                <div class="card step-card">
+                    <div class="step-number">02</div>
+                    <div class="card-icon">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
+                            <path d="M3 7V5a2 2 0 0 1 2-2h2" />
+                            <path d="M17 3h2a2 2 0 0 1 2 2v2" />
+                            <path d="M21 17v2a2 2 0 0 1-2 2h-2" />
+                            <path d="M7 21H5a2 2 0 0 1-2-2v-2" />
+                        </svg>
+                    </div>
+                    <h3 data-es="Escaneo en Trípode" data-en="Tripod Scan">Escaneo en Trípode</h3>
+                    <p data-es="Al llegar al comedor, presenta su código QR dinámico frente a la estación de escaneo autónoma en la entrada."
+                        data-en="Upon arriving at the cafeteria, they present their dynamic QR code in front of the autonomous scanning station.">
+                        Al llegar al comedor, presenta su código QR dinámico frente a la estación de escaneo autónoma en
+                        la entrada.
+                    </p>
+                </div>
+
+                <div class="card step-card">
+                    <div class="step-number">03</div>
+                    <div class="card-icon">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
+                            <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" />
+                            <polyline points="22 4 12 14.01 9 11.01" />
+                        </svg>
+                    </div>
+                    <h3 data-es="Acceso y Almuerzo" data-en="Access & Meal">Acceso y Almuerzo</h3>
+                    <p data-es="El sistema valida el acceso al instante en pantalla verde y el alumno retira su bandeja de forma rápida sin filas."
+                        data-en="The system validates access instantly on a green screen, allowing students to pick up their meal without lines.">
+                        El sistema valida el acceso al instante en pantalla verde y el alumno retira su bandeja de forma
+                        rápida sin filas.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECCIÓN 3: ESTACIÓN DE ESCANEO + SIMULADOR CORTE DE INTERNET -->
+        <section class="container">
+            <h2 class="section-title">
+                <span data-es="3. Estación" data-en="3. Tripod">3. Estación</span>
                 <span class="title-white" data-es="de Escaneo (Trípode)" data-en="Scanning Station">de Escaneo
                     (Trípode)</span>
             </h2>
@@ -127,36 +223,156 @@
                     <p data-es="Al escanear el QR, la pantalla muestra en tiempo real un mensaje de 'Acceso Permitido', acompañado de la hora exacta, fecha y nombre del alumno. Esto evita que los estudiantes usen capturas de pantalla de compañeros o repitan plato."
                         data-en="Upon scanning the QR, the screen displays a real-time 'Access Granted' message, along with the exact time, date, and student's name. This prevents students from using screenshots or getting double meals.">
                         Al escanear el QR, la pantalla muestra en tiempo real un mensaje de 'Acceso Permitido',
-                        acompañado
-                        de la hora exacta, fecha y nombre del alumno. Esto evita que los estudiantes usen capturas de
+                        acompañado de la hora exacta, fecha y nombre del alumno. Esto evita que los estudiantes usen
+                        capturas de
                         pantalla de compañeros o repitan plato.
                     </p>
                 </div>
             </div>
+
+            <!-- WIDGET SIMULADOR DE CORTE DE INTERNET (BILINGÜE CORREGIDO) -->
+            <div class="card offline-simulator-card" id="offline-sim-card">
+                <div class="offline-sim-header">
+                    <div class="sim-title-group">
+                        <span class="sim-badge" data-es="DEMO INTERACTIVA" data-en="INTERACTIVE DEMO">DEMO
+                            INTERACTIVA</span>
+                        <h3 data-es="Prueba de Resiliencia: Contingencia &quot;Modo Offline&quot;"
+                            data-en="Resilience Test: Contingency &quot;Offline Mode&quot;">
+                            Prueba de Resiliencia: Contingencia "Modo Offline"
+                        </h3>
+                    </div>
+                    <button id="toggle-offline-btn" class="offline-toggle-btn">
+                        <span class="status-dot-btn"></span>
+                        <span id="btn-offline-text" data-es="Simular Corte de Internet"
+                            data-en="Simulate Internet Cut">Simular Corte de Internet</span>
+                    </button>
+                </div>
+                <div class="offline-sim-content">
+                    <div class="sim-status-box" id="sim-status-box">
+                        <div class="status-indicator">
+                            <div class="status-icon-circle" id="status-circle"></div>
+                            <div>
+                                <h4 id="status-title" data-es="Estado de Red: ONLINE (100% Conectado)"
+                                    data-en="Network Status: ONLINE (100% Connected)">
+                                    Estado de Red: ONLINE (100% Conectado)
+                                </h4>
+                                <p id="status-desc"
+                                    data-es="El escáner valida datos en tiempo real directo con los servidores centralizados del PAE / JUNAEB."
+                                    data-en="The scanner validates real-time data directly with central PAE / JUNAEB servers.">
+                                    El escáner valida datos en tiempo real directo con los servidores centralizados del
+                                    PAE / JUNAEB.
+                                </p>
+                            </div>
+                        </div>
+                        <div class="sim-metrics">
+                            <div class="sim-metric-item">
+                                <span class="metric-label" data-es="Latencia API:" data-en="API Latency:">Latencia
+                                    API:</span>
+                                <span class="metric-val" id="metric-latency">18 ms</span>
+                            </div>
+                            <div class="sim-metric-item">
+                                <span class="metric-label" data-es="Almacenamiento Local:"
+                                    data-en="Local Storage:">Almacenamiento Local:</span>
+                                <span class="metric-val" id="metric-storage" data-es="0 lecturas pendientes"
+                                    data-en="0 pending scans (Synced)">0 lecturas pendientes</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </section>
 
+        <!-- SECCIÓN 4: COMPARATIVA ANTES VS DESPUÉS -->
         <section class="container">
             <h2 class="section-title">
-                <span data-es="3. El Desafío" data-en="3. The Global">3. El Desafío</span>
+                <span data-es="4. Modelo Tradicional" data-en="4. Traditional Model">4. Modelo Tradicional</span>
+                <span class="title-white" data-es="vs JunaWeb" data-en="vs JunaWeb">vs JunaWeb</span>
+            </h2>
+            <div class="comparison-table-wrapper card">
+                <table class="comparison-table">
+                    <thead>
+                        <tr>
+                            <th data-es="Característica" data-en="Feature">Característica</th>
+                            <th class="col-before" data-es="Sistema Tradicional" data-en="Traditional System">Sistema
+                                Tradicional</th>
+                            <th class="col-after" data-es="Con JunaWeb" data-en="With JunaWeb">Con JunaWeb</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="feature-name" data-es="Velocidad de Entrada" data-en="Entry Speed">Velocidad de
+                                Entrada</td>
+                            <td class="col-before" data-es="Filas lentas, espera de 15 a 20 min"
+                                data-en="Slow lines, 15 to 20 min wait">Filas lentas, espera de 15 a 20 min</td>
+                            <td class="col-after" data-es="Validación fluida en 2 segundos"
+                                data-en="Fluid validation in 2 seconds">Validación fluida en 2 segundos</td>
+                        </tr>
+                        <tr>
+                            <td class="feature-name" data-es="Control de Seguridad" data-en="Security Control">Control
+                                de Seguridad</td>
+                            <td class="col-before" data-es="Revisión visual manual susceptible a errores"
+                                data-en="Manual visual check prone to errors">Revisión visual manual susceptible a
+                                errores</td>
+                            <td class="col-after" data-es="QR dinámico e imborrable con timestamp"
+                                data-en="Dynamic & tamper-proof QR with timestamp">QR dinámico e imborrable con
+                                timestamp</td>
+                        </tr>
+                        <tr>
+                            <td class="feature-name" data-es="Gestión de Raciones" data-en="Meal Management">Gestión de
+                                Raciones</td>
+                            <td class="col-before" data-es="Estimaciones a ciegas y gran desperdicio"
+                                data-en="Blind estimates and heavy food waste">Estimaciones a ciegas y gran desperdicio
+                            </td>
+                            <td class="col-after" data-es="Cálculo exacto basado en reservas reales"
+                                data-en="Exact calculation based on active reservations">Cálculo exacto basado en
+                                reservas reales</td>
+                        </tr>
+                        <tr>
+                            <td class="feature-name" data-es="Labor del Personal" data-en="Staff Workload">Labor del
+                                Personal</td>
+                            <td class="col-before" data-es="Inspector atado a sostener planilla o escanear"
+                                data-en="Inspector tied to holding paper or scanner">Inspector atado a sostener planilla
+                                o escanear</td>
+                            <td class="col-after" data-es="Trípode 100% autónomo, personal libre"
+                                data-en="100% autonomous tripod, free staff">Trípode 100% autónomo, personal libre</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <!-- SECCIÓN 5: EL DESAFÍO DEL DESPERDICIO -->
+        <section class="container">
+            <h2 class="section-title">
+                <span data-es="5. El Desafío" data-en="5. The Global">5. El Desafío</span>
                 <span class="title-white" data-es="del Desperdicio" data-en="Waste Challenge">del Desperdicio</span>
             </h2>
             <div class="grid-3">
                 <div class="stat-box">
-                    <div class="stat-number">1.050M</div>
+                    <div class="live-indicator">
+                        <span class="pulse-dot"></span> <span data-es="EN VIVO" data-en="LIVE">EN VIVO</span>
+                    </div>
+                    <div class="stat-number" data-target="1050" data-suffix="M" data-format="thousand">0M</div>
                     <p data-es="Toneladas de comida descartadas anualmente a nivel mundial (19% del total disponible)."
                         data-en="Tons of food discarded annually worldwide (19% of total available).">
                         Toneladas de comida descartadas anualmente a nivel mundial (19% del total disponible).
                     </p>
                 </div>
                 <div class="stat-box">
-                    <div class="stat-number">132 Kg</div>
+                    <div class="live-indicator">
+                        <span class="pulse-dot"></span> <span data-es="EN VIVO" data-en="LIVE">EN VIVO</span>
+                    </div>
+                    <div class="stat-number" data-target="132" data-suffix=" Kg">0 Kg</div>
                     <p data-es="Promedio de desperdicio de comida anual por persona en el mundo."
                         data-en="Average annual food waste per person globally.">
                         Promedio de desperdicio de comida anual por persona en el mundo.
                     </p>
                 </div>
                 <div class="stat-box">
-                    <div class="stat-number">10%</div>
+                    <div class="live-indicator">
+                        <span class="pulse-dot"></span> <span data-es="EN VIVO" data-en="LIVE">EN VIVO</span>
+                    </div>
+                    <div class="stat-number" data-target="10" data-suffix="%">0%</div>
                     <p data-es="De las emisiones de gases de efecto invernadero provienen de alimentos no consumidos."
                         data-en="Of global greenhouse gas emissions come from unconsumed food.">
                         De las emisiones de gases de efecto invernadero provienen de alimentos no consumidos.
@@ -165,13 +381,13 @@
             </div>
         </section>
 
+        <!-- SECCIÓN 6: ALINEACIÓN CON LOS ODS -->
         <section class="container">
             <h2 class="section-title">
-                <span data-es="4. Alineación" data-en="4. Alignment with">4. Alineación</span>
+                <span data-es="6. Alineación" data-en="6. Alignment with">6. Alineación</span>
                 <span class="title-white" data-es="con los ODS" data-en="SDGs">con los ODS</span>
             </h2>
             <div class="grid-2">
-                <!-- ODS 12 -->
                 <div class="card card-ods">
                     <div class="ods-header">
                         <img src="static/images/S_SDG goals_icons-individual-rgb-12_0.png"
@@ -182,16 +398,13 @@
                                     data-en="Responsible Consumption">Consumo Responsable</span></h3>
                         </div>
                     </div>
-
                     <p data-es="La verificación objetiva de fecha, hora y nombre asegura un acceso 100% equitativo. Garantiza que la ración llegue al estudiante que realmente reservó, evitando colados o suplantaciones."
                         data-en="Objective verification of date, time, and student name ensures 100% fair access. It guarantees meals reach the students who reserved them, blocking line cutters or impersonators.">
                         La verificación objetiva de fecha, hora y nombre asegura un acceso 100% equitativo. Garantiza
-                        que la
-                        ración llegue al estudiante que realmente reservó, evitando colados o suplantaciones.
+                        que la ración llegue al estudiante que realmente reservó, evitando colados o suplantaciones.
                     </p>
                 </div>
 
-                <!-- ODS 2 -->
                 <div class="card card-ods">
                     <div class="ods-header">
                         <img src="static/images/S_SDG goals_icons-individual-rgb-02_0.png" alt="ODS 2 - Hambre Cero"
@@ -205,21 +418,19 @@
                     <p data-es="Al agilizar el flujo de entrada con el trípode, garantizamos que todos los alumnos alcancen a comer durante el tiempo del recreo, evitando botar raciones porque suena el timbre de clases."
                         data-en="By streamlining entry with the tripod station, we ensure all students have enough time to eat during break, preventing food waste caused by class bells.">
                         Al agilizar el flujo de entrada con el trípode, garantizamos que todos los alumnos alcancen a
-                        comer
-                        durante el tiempo del recreo, evitando botar raciones porque suena el timbre de clases.
+                        comer durante el tiempo del recreo, evitando botar raciones porque suena el timbre de clases.
                     </p>
                 </div>
             </div>
         </section>
 
-        <!-- SECCIÓN 5: EQUIPO EN TERRENO UNIFICADO -->
+        <!-- SECCIÓN 7: EQUIPO EN TERRENO -->
         <section class="container">
             <h2 class="section-title">
-                <span data-es="5. Nuestro" data-en="5. Our">5. Nuestro</span>
+                <span data-es="7. Nuestro" data-en="7. Our">7. Nuestro</span>
                 <span class="title-white" data-es="Equipo en Terreno" data-en="Team in Action">Equipo en Terreno</span>
             </h2>
             <div class="card card-highlight group-section-card">
-                <!-- Columna Izquierda: Información -->
                 <div class="group-info">
                     <div class="card-icon">
                         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
@@ -239,23 +450,14 @@
                         software y hardware directamente en terreno.
                     </p>
 
-                    <ul class="team-list">
-                        <li><strong data-es="Desarrollo & Backend:" data-en="Development & Backend:">Desarrollo &
-                                Backend:</strong> <span data-es="Arquitectura lógica e integración con hardware."
-                                data-en="Logical architecture and hardware integration.">Arquitectura lógica e
-                                integración con hardware.</span></li>
-                        <li><strong data-es="Diseño UI/UX:" data-en="UI/UX Design:">Diseño UI/UX:</strong> <span
-                                data-es="Interfaz web fluida y experiencia de usuario."
-                                data-en="Smooth web interface and user experience.">Interfaz web fluida y experiencia de
-                                usuario.</span></li>
-                        <li><strong data-es="Pruebas de Campo:" data-en="Field Testing:">Pruebas de Campo:</strong>
-                            <span data-es="Validación de puntos de control automatizados."
-                                data-en="Validation of automated control points.">Validación de puntos de control
-                                automatizados.</span></li>
-                    </ul>
+                    <div class="team-tags">
+                        <div class="tech-tag"><span class="tag-label">Backend:</span> Arquitectura Lógica & Hardware
+                        </div>
+                        <div class="tech-tag"><span class="tag-label">UI/UX:</span> Interfaz Web Cyberpunk</div>
+                        <div class="tech-tag"><span class="tag-label">Campo:</span> Validación de Trípode Autónomo</div>
+                    </div>
                 </div>
 
-                <!-- Columna Derecha: Fotografía Grupal -->
                 <div class="group-photo-side">
                     <div class="group-photo-container">
                         <img src="static/images/equipo-grupal.png" alt="Foto del equipo JunaWeb" class="group-img">
@@ -268,27 +470,441 @@
             </div>
         </section>
 
+        <!-- SECCIÓN 8: PREGUNTAS FRECUENTES (FAQ) -->
+        <section class="container">
+            <h2 class="section-title">
+                <span data-es="8. Preguntas" data-en="8. Frequently Asked">8. Preguntas</span>
+                <span class="title-white" data-es="Frecuentes" data-en="Questions">Frecuentes</span>
+            </h2>
+            <div class="faq-accordion">
+                <div class="faq-item">
+                    <button class="faq-header" type="button">
+                        <span data-es="¿Qué ocurre si un estudiante no tiene teléfono celular o acceso a internet?"
+                            data-en="What happens if a student does not have a smartphone or internet access?">
+                            ¿Qué ocurre si un estudiante no tiene teléfono celular o acceso a internet?
+                        </span>
+                        <span class="faq-icon">+</span>
+                    </button>
+                    <div class="faq-content">
+                        <p data-es="El sistema permite métodos alternativos de validación. Los estudiantes pueden usar una tarjeta física con código QR estático o los inspectores pueden realizar la validación manual buscando el RUT del alumno en el sistema."
+                            data-en="The system allows alternative validation methods. Students can use a physical card with a static QR code, or inspectors can manually validate entry by searching the student's ID.">
+                            El sistema permite métodos alternativos de validación. Los estudiantes pueden usar una
+                            tarjeta física con código QR estático o los inspectores pueden realizar la validación manual
+                            buscando el RUT del alumno en el sistema.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-header" type="button">
+                        <span data-es="¿Cómo evita el sistema que los alumnos se presten capturas de pantalla?"
+                            data-en="How does the system prevent students from sharing screenshots?">
+                            ¿Cómo evita el sistema que los alumnos se presten capturas de pantalla?
+                        </span>
+                        <span class="faq-icon">+</span>
+                    </button>
+                    <div class="faq-content">
+                        <p data-es="Los códigos QR generados son dinámicos y cambian constantemente. Además, al escanearse en la estación del trípode, el sistema verifica la hora exacta y marca el ticket como 'Consumido' en tiempo real, bloqueando lecturas duplicadas."
+                            data-en="Generated QR codes are dynamic and change constantly. Additionally, when scanned at the tripod station, the system checks the exact timestamp and marks the ticket as 'Used' in real time, blocking duplicate reads.">
+                            Los códigos QR generados son dinámicos y cambian constantemente. Además, al escanearse en la
+                            estación del trípode, el sistema verifica la hora exacta y marca el ticket como 'Consumido'
+                            en tiempo real, bloqueando lecturas duplicadas.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-header" type="button">
+                        <span data-es="¿Qué infraestructura requiere el colegio para implementar JunaWeb?"
+                            data-en="What infrastructure does the school need to implement JunaWeb?">
+                            ¿Qué infraestructura requiere el colegio para implementar JunaWeb?
+                        </span>
+                        <span class="faq-icon">+</span>
+                    </button>
+                    <div class="faq-content">
+                        <p data-es="Solo se necesita conexión a internet básica (Wi-Fi o datos móviles) y un smartphone montado sobre un trípode estándar en el acceso del comedor. No se requiere costoso hardware industrial."
+                            data-en="Only a basic internet connection (Wi-Fi or mobile data) and a smartphone mounted on a standard tripod at the cafeteria entrance are required. No expensive industrial hardware is needed.">
+                            Solo se necesita conexión a internet básica (Wi-Fi o datos móviles) y un smartphone montado
+                            sobre un trípode estándar en el acceso del comedor. No se requiere costoso hardware
+                            industrial.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-header" type="button">
+                        <span data-es="¿Cómo ayuda la plataforma a reducir el desperdicio de comida?"
+                            data-en="How does the platform help reduce food waste?">
+                            ¿Cómo ayuda la plataforma a reducir el desperdicio de comida?
+                        </span>
+                        <span class="faq-icon">+</span>
+                    </button>
+                    <div class="faq-content">
+                        <p data-es="Al requerir confirmaciones o reservas previas de las raciones, la cocina conoce con anticipación el número exacto de platos a preparar, reduciendo la sobreproducción y el desperdicio de insumos."
+                            data-en="By requiring meal reservations, the kitchen team knows the exact number of meals to prepare in advance, preventing overproduction and food waste.">
+                            Al requerir confirmaciones o reservas previas de las raciones, la cocina conoce con
+                            anticipación el número exacto de platos a preparar, reduciendo la sobreproducción y el
+                            desperdicio de insumos.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- FOOTER -->
         <footer>
             <p>© JunaWeb - Project Information & Documentation</p>
         </footer>
+    </div>
 
-        <script>
+    <!-- WIDGET ASISTENTE VIRTUAL CYBERPUNK ("JUNABOT") -->
+    <div class="junabot-widget">
+        <button id="junabot-trigger" class="junabot-trigger" title="Consultar Asistente JunaBot">
+            <span class="junabot-badge-dot"></span>
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <rect x="3" y="11" width="18" height="10" rx="2" />
+                <circle cx="12" cy="5" r="2" />
+                <path d="M12 7v4" />
+                <line x1="8" y1="16" x2="8" y2="16" stroke-width="3" />
+                <line x1="16" y1="16" x2="16" y2="16" stroke-width="3" />
+            </svg>
+        </button>
+
+        <div id="junabot-modal" class="junabot-modal">
+            <div class="junabot-header">
+                <div class="junabot-avatar">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <rect x="3" y="11" width="18" height="10" rx="2" />
+                        <circle cx="12" cy="5" r="2" />
+                        <path d="M12 7v4" />
+                    </svg>
+                </div>
+                <div class="junabot-title">
+                    <h4>JunaBot v1.0</h4>
+                    <span class="bot-status"><span class="status-dot"></span> <span data-es="EN LÍNEA"
+                            data-en="ONLINE">EN LÍNEA</span></span>
+                </div>
+                <button id="junabot-close" class="junabot-close">&times;</button>
+            </div>
+
+            <div class="junabot-chat" id="junabot-chat">
+                <div class="bot-msg">
+                    <p>Hola, soy <strong>JunaBot</strong>. 🤖 ¿En qué te puedo ayudar sobre la tecnología de JunaWeb?
+                    </p>
+                </div>
+            </div>
+
+            <div class="junabot-options">
+                <button class="bot-opt-btn" data-q-es="¿Cómo funciona sin internet?"
+                    data-q-en="How does it work offline?">
+                    ¿Cómo funciona sin internet?
+                </button>
+                <button class="bot-opt-btn" data-q-es="¿Qué tan seguro es el QR?"
+                    data-q-en="How secure is the QR code?">
+                    ¿Qué tan seguro es el QR?
+                </button>
+                <button class="bot-opt-btn" data-q-es="¿Cuánto cuesta instalar el trípode?"
+                    data-q-en="How much does setting up the tripod cost?">
+                    ¿Cuánto cuesta instalar el trípode?
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- SCRIPT PRINCIPAL INTEGRO Y CORREGIDO -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // 1. TRADUCCIÓN DE IDIOMA Y REACCIÓN DE JUNABOT
             const toggleBtn = document.getElementById('toggle-lang');
             const langLabel = document.getElementById('lang-label');
             let currentLang = 'es';
 
-            toggleBtn.addEventListener('click', () => {
-                currentLang = currentLang === 'es' ? 'en' : 'es';
-                langLabel.textContent = currentLang === 'es' ? 'English' : 'Español';
-
+            function updateLanguage() {
+                // Traducir todos los elementos generales con data-es / data-en
                 const elementsToTranslate = document.querySelectorAll('[data-es][data-en]');
-
                 elementsToTranslate.forEach(element => {
                     element.innerHTML = element.getAttribute(`data-${currentLang}`);
                 });
+
+                // Traducir las opciones del JunaBot
+                const junabotOpts = document.querySelectorAll('.bot-opt-btn');
+                junabotOpts.forEach(btn => {
+                    const text = btn.getAttribute(`data-q-${currentLang}`);
+                    if (text) btn.textContent = text;
+                });
+
+                // Cambiar mensaje inicial del Bot si solo tiene el mensaje de bienvenida
+                const junabotChat = document.getElementById('junabot-chat');
+                if (junabotChat && junabotChat.children.length === 1) {
+                    const firstMsg = junabotChat.querySelector('.bot-msg p');
+                    if (firstMsg) {
+                        firstMsg.innerHTML = currentLang === 'es'
+                            ? 'Hola, soy <strong>JunaBot</strong>. 🤖 ¿En qué te puedo ayudar sobre la tecnología de JunaWeb?'
+                            : 'Hi, I am <strong>JunaBot</strong>. 🤖 How can I help you with JunaWeb technology?';
+                    }
+                }
+            }
+
+            toggleBtn.addEventListener('click', () => {
+                currentLang = currentLang === 'es' ? 'en' : 'es';
+                langLabel.textContent = currentLang === 'es' ? 'English' : 'Español';
+                updateLanguage();
             });
-        </script>
-    </div>
+
+            // 2. TOGGLE DE TEMA DUAL (DARK / LIGHT)
+            const toggleThemeBtn = document.getElementById('toggle-theme');
+            toggleThemeBtn.addEventListener('click', () => {
+                document.body.classList.toggle('light-theme');
+            });
+
+            // 3. TERMINAL LOGS EN VIVO
+            const terminalBody = document.getElementById('terminal-body');
+            const mockLogs = [
+                "scan_event: QR_VALIDATED [Student ID: 20849201] -> ACCESS GRANTED",
+                "queue_monitor: Flow rate optimal (1.8s avg/person)",
+                "kitchen_sync: Active meal count updated (Reservations: 412)",
+                "scan_event: QR_VALIDATED [Student ID: 21940122] -> ACCESS GRANTED",
+                "anti_spoofing: Blocked duplicated screenshot attempt [RUT 19382012-K]"
+            ];
+
+            let logIndex = 0;
+            setInterval(() => {
+                if (terminalBody) {
+                    const now = new Date();
+                    const timeStr = now.toTimeString().split(' ')[0];
+                    const newLog = document.createElement('div');
+                    newLog.className = 'terminal-line';
+                    newLog.innerHTML = `<span class="t-prefix">[${timeStr}]</span> ${mockLogs[logIndex]}`;
+                    terminalBody.appendChild(newLog);
+
+                    if (terminalBody.childNodes.length > 8) {
+                        terminalBody.removeChild(terminalBody.firstChild);
+                    }
+                    terminalBody.scrollTop = terminalBody.scrollHeight;
+                    logIndex = (logIndex + 1) % mockLogs.length;
+                }
+            }, 3500);
+
+            // 4. SIMULADOR DE MODO OFFLINE (BILINGÜE CORREGIDO)
+            const toggleOfflineBtn = document.getElementById('toggle-offline-btn');
+            const simCard = document.getElementById('offline-sim-card');
+            const statusTitle = document.getElementById('status-title');
+            const statusDesc = document.getElementById('status-desc');
+            const metricLatency = document.getElementById('metric-latency');
+            const metricStorage = document.getElementById('metric-storage');
+            const btnOfflineText = document.getElementById('btn-offline-text');
+            let isOffline = false;
+
+            toggleOfflineBtn.addEventListener('click', () => {
+                isOffline = !isOffline;
+
+                if (isOffline) {
+                    simCard.classList.add('is-offline');
+
+                    btnOfflineText.setAttribute('data-es', 'Restablecer Conexión (Online)');
+                    btnOfflineText.setAttribute('data-en', 'Restore Connection (Online)');
+
+                    statusTitle.setAttribute('data-es', 'Estado de Red: OFFLINE (Corte de Internet Activo)');
+                    statusTitle.setAttribute('data-en', 'Network Status: OFFLINE (Internet Cut Active)');
+
+                    statusDesc.setAttribute('data-es', 'El escáner sigue operando de forma autónoma con la base de datos local en caché. Las validaciones NO se detienen.');
+                    statusDesc.setAttribute('data-en', 'The scanner continues operating autonomously using the cached local database. Validations DO NOT stop.');
+
+                    metricStorage.setAttribute('data-es', '14 lecturas guardadas localmente');
+                    metricStorage.setAttribute('data-en', '14 scans saved locally');
+
+                    metricLatency.textContent = '0 ms (Local Mode)';
+                } else {
+                    simCard.classList.remove('is-offline');
+
+                    btnOfflineText.setAttribute('data-es', 'Simular Corte de Internet');
+                    btnOfflineText.setAttribute('data-en', 'Simulate Internet Cut');
+
+                    statusTitle.setAttribute('data-es', 'Estado de Red: ONLINE (100% Conectado)');
+                    statusTitle.setAttribute('data-en', 'Network Status: ONLINE (100% Connected)');
+
+                    statusDesc.setAttribute('data-es', 'El escáner valida datos en tiempo real directo con los servidores centralizados del PAE / JUNAEB.');
+                    statusDesc.setAttribute('data-en', 'The scanner validates real-time data directly with central PAE / JUNAEB servers.');
+
+                    metricStorage.setAttribute('data-es', '0 lecturas pendientes (Sincronizado)');
+                    metricStorage.setAttribute('data-en', '0 pending scans (Synced)');
+
+                    metricLatency.textContent = '18 ms';
+                }
+
+                btnOfflineText.textContent = btnOfflineText.getAttribute(`data-${currentLang}`);
+                statusTitle.textContent = statusTitle.getAttribute(`data-${currentLang}`);
+                statusDesc.textContent = statusDesc.getAttribute(`data-${currentLang}`);
+                metricStorage.textContent = metricStorage.getAttribute(`data-${currentLang}`);
+            });
+
+            // 5. LÓGICA ASISTENTE VIRTUAL "JUNABOT" (BILINGÜE)
+            const junabotTrigger = document.getElementById('junabot-trigger');
+            const junabotModal = document.getElementById('junabot-modal');
+            const junabotClose = document.getElementById('junabot-close');
+            const junabotChat = document.getElementById('junabot-chat');
+            const junabotOpts = document.querySelectorAll('.bot-opt-btn');
+
+            const botAnswers = {
+                "¿Cómo funciona sin internet?": {
+                    es: "JunaWeb almacena un 'cálculo seguro' en la memoria del smartphone. Si el colegio pierde conexión, el escáner sigue leyendo y validando pases, guardando los registros para sincronizarlos automáticamente al volver el Wi-Fi.",
+                    en: "JunaWeb stores a secure cache in the smartphone's local storage. If the school loses connection, the scanner keeps validating passes and stores entries to sync automatically once Wi-Fi returns."
+                },
+                "¿Qué tan seguro es el QR?": {
+                    es: "Cada QR es dinámico e incluye un 'Timestamp' único. Al ser escaneado, la pantalla del trípode confirma la hora exacta e invalida el código al instante, haciendo imposible usar fotos o capturas reenviadas.",
+                    en: "Each QR code is dynamic and includes a unique timestamp. Upon scanning, the tripod station validates the exact time and instantly expires the code, making screenshots or photo-sharing useless."
+                },
+                "¿Cuánto cuesta instalar el trípode?": {
+                    es: "El costo es ultrabajo: solo requiere un smartphone estándar y un trípode convencional. No exige la instalación de molinetes industriales ni equipos caros.",
+                    en: "The cost is ultra-low: it only requires a standard smartphone and a conventional tripod. It does not require installing industrial turnstiles or expensive hardware."
+                }
+            };
+
+            junabotTrigger?.addEventListener('click', () => {
+                junabotModal?.classList.toggle('active');
+            });
+
+            junabotClose?.addEventListener('click', () => {
+                junabotModal?.classList.remove('active');
+            });
+
+            junabotOpts.forEach(btn => {
+                btn.addEventListener('click', () => {
+                    const keyEs = btn.getAttribute('data-q-es');
+                    const questionText = btn.textContent.trim();
+
+                    const answerObj = botAnswers[keyEs];
+                    const botReply = answerObj
+                        ? answerObj[currentLang]
+                        : (currentLang === 'es' ? "Lo siento, no encontré información." : "Sorry, I couldn't find information.");
+
+                    const userMsgDiv = document.createElement('div');
+                    userMsgDiv.className = 'user-msg';
+                    userMsgDiv.innerHTML = `<p>${questionText}</p>`;
+                    junabotChat.appendChild(userMsgDiv);
+                    junabotChat.scrollTop = junabotChat.scrollHeight;
+
+                    setTimeout(() => {
+                        const botMsgDiv = document.createElement('div');
+                        botMsgDiv.className = 'bot-msg';
+                        botMsgDiv.innerHTML = `<p class="typing-text">...</p>`;
+                        junabotChat.appendChild(botMsgDiv);
+                        junabotChat.scrollTop = junabotChat.scrollHeight;
+
+                        setTimeout(() => {
+                            botMsgDiv.querySelector('p').innerHTML = botReply;
+                            junabotChat.scrollTop = junabotChat.scrollHeight;
+                        }, 800);
+                    }, 300);
+                });
+            });
+
+            // 6. SCROLL REVEAL
+            const revealElements = document.querySelectorAll('.card, .stat-box, .section-title, .hero');
+            revealElements.forEach(el => el.classList.add('reveal'));
+
+            const revealObserver = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('active');
+                    }
+                });
+            }, { threshold: 0.12 });
+
+            revealElements.forEach(el => revealObserver.observe(el));
+
+            // 7. CONTADORES NUMÉRICOS ANIMADOS
+            const counters = document.querySelectorAll('.stat-number');
+
+            const animateCounter = (counter) => {
+                const target = +counter.getAttribute('data-target');
+                const suffix = counter.getAttribute('data-suffix') || '';
+                const isThousandFormatted = counter.hasAttribute('data-format');
+                const duration = 2000;
+                const startTime = performance.now();
+
+                const updateCount = (currentTime) => {
+                    const elapsedTime = currentTime - startTime;
+                    const progress = Math.min(elapsedTime / duration, 1);
+                    const easeProgress = progress === 1 ? 1 : 1 - Math.pow(2, -10 * progress);
+                    const currentCount = Math.floor(easeProgress * target);
+
+                    let formattedCount = currentCount;
+                    if (isThousandFormatted) {
+                        formattedCount = currentCount.toLocaleString('es-CL');
+                    }
+
+                    counter.textContent = `${formattedCount}${suffix}`;
+
+                    if (progress < 1) {
+                        requestAnimationFrame(updateCount);
+                    } else {
+                        let finalFormatted = target;
+                        if (isThousandFormatted) {
+                            finalFormatted = target.toLocaleString('es-CL');
+                        }
+                        counter.textContent = `${finalFormatted}${suffix}`;
+                    }
+                };
+
+                requestAnimationFrame(updateCount);
+            };
+
+            const counterObserver = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        animateCounter(entry.target);
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.4 });
+
+            counters.forEach(counter => counterObserver.observe(counter));
+
+            // 8. SPOTLIGHT EFFECT EN TARJETAS
+            document.querySelectorAll('.card, .stat-box').forEach(card => {
+                const spotlight = document.createElement('div');
+                spotlight.className = 'card-spotlight';
+                card.appendChild(spotlight);
+
+                card.addEventListener('mousemove', (e) => {
+                    const rect = card.getBoundingClientRect();
+                    const x = e.clientX - rect.left;
+                    const y = e.clientY - rect.top;
+                    card.style.setProperty('--mouse-x', `${x}px`);
+                    card.style.setProperty('--mouse-y', `${y}px`);
+                });
+            });
+
+            // 9. LÓGICA ACORDEÓN FAQ
+            const faqHeaders = document.querySelectorAll('.faq-header');
+
+            faqHeaders.forEach(header => {
+                header.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    const currentItem = header.closest('.faq-item');
+                    const content = currentItem.querySelector('.faq-content');
+                    const isOpen = currentItem.classList.contains('active');
+
+                    document.querySelectorAll('.faq-item').forEach(item => {
+                        if (item !== currentItem) {
+                            item.classList.remove('active');
+                            const c = item.querySelector('.faq-content');
+                            if (c) c.style.maxHeight = '0px';
+                        }
+                    });
+
+                    if (isOpen) {
+                        currentItem.classList.remove('active');
+                        content.style.maxHeight = '0px';
+                    } else {
+                        currentItem.classList.add('active');
+                        content.style.maxHeight = content.scrollHeight + 30 + 'px';
+                    }
+                });
+            });
+        });
+    </script>
 </body>
 
 </html>
