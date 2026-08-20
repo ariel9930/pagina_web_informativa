@@ -85,7 +85,7 @@ body {
 .glow-1 {
     top: -100px;
     left: -100px;
-    background: var(--accent-cyan);
+    background: var(--accent-green);
 }
 
 .glow-2 {
@@ -129,13 +129,11 @@ header {
     color: var(--text-primary);
     font-weight: 700;
     font-size: 1.5rem;
-
 }
 
 .logo-img {
     height: 90px;
     width: 150px;
-
 }
 
 .logo-text span {
@@ -276,17 +274,9 @@ body.light-theme .moon-icon {
 }
 
 @keyframes pulse {
-    0% {
-        opacity: 0.4;
-    }
-
-    50% {
-        opacity: 1;
-    }
-
-    100% {
-        opacity: 0.4;
-    }
+    0% { opacity: 0.4; }
+    50% { opacity: 1; }
+    100% { opacity: 0.4; }
 }
 
 /* TERMINAL INTERACTIVA */
@@ -316,17 +306,9 @@ body.light-theme .moon-icon {
     border-radius: 50%;
 }
 
-.dot.red {
-    background: #ff5f56;
-}
-
-.dot.yellow {
-    background: #ffbd2e;
-}
-
-.dot.green {
-    background: #27c93f;
-}
+.dot.red { background: #ff5f56; }
+.dot.yellow { background: #ffbd2e; }
+.dot.green { background: #27c93f; }
 
 .terminal-title {
     color: var(--text-muted);
@@ -345,13 +327,8 @@ body.light-theme .moon-icon {
     color: #a0aec0;
 }
 
-.t-prefix {
-    color: var(--accent-cyan);
-}
-
-.t-green {
-    color: var(--accent-green);
-}
+.t-prefix { color: var(--accent-cyan); }
+.t-green { color: var(--accent-green); }
 
 /* WIDGET SIMULADOR OFFLINE */
 .offline-simulator-card {
@@ -455,9 +432,7 @@ body.light-theme .moon-icon {
     flex-wrap: wrap;
 }
 
-.metric-label {
-    color: var(--text-muted);
-}
+.metric-label { color: var(--text-muted); }
 
 .metric-val {
     color: var(--accent-green);
@@ -465,9 +440,7 @@ body.light-theme .moon-icon {
     margin-left: 4px;
 }
 
-.is-offline .metric-val {
-    color: var(--accent-red);
-}
+.is-offline .metric-val { color: var(--accent-red); }
 
 /* TABLA COMPARATIVA */
 .comparison-table-wrapper {
@@ -491,13 +464,8 @@ body.light-theme .moon-icon {
     font-size: 0.9rem;
 }
 
-.col-before {
-    color: var(--accent-red);
-}
-
-.col-after {
-    color: var(--accent-green);
-}
+.col-before { color: var(--accent-red); }
+.col-after { color: var(--accent-green); }
 
 /* METRICAS & STATS */
 .stat-box {
@@ -747,9 +715,7 @@ body.light-theme .moon-icon {
     justify-content: center;
 }
 
-.junabot-title {
-    flex: 1;
-}
+.junabot-title { flex: 1; }
 
 .junabot-title h4 {
     font-size: 0.85rem;
@@ -806,9 +772,7 @@ body.light-theme .moon-icon {
     align-self: flex-end;
 }
 
-.user-msg {
-    align-self: flex-end;
-}
+.user-msg { align-self: flex-end; }
 
 .junabot-options {
     padding: 10px 14px 14px 14px;
@@ -842,12 +806,6 @@ footer {
     border-top: 1px solid rgba(255, 255, 255, 0.05);
 }
 
-.glow-1 {
-    top: -100px;
-    left: -100px;
-    background: var(--accent-green);
-}
-
 /* Centrar las tarjetas de los miembros del equipo */
 .team-members-grid {
     display: flex;
@@ -857,16 +815,13 @@ footer {
 }
 
 .team-members-grid .team-card {
-    /* Mantiene el ancho equivalente a una grilla de 3 columnas */
     flex: 1 1 calc(33.333% - 1.5rem);
     min-width: 250px;
     max-width: 380px;
 }
 
 /* Alineación e integración de imagen en Sección 1 */
-.align-center {
-    align-items: center;
-}
+.align-center { align-items: center; }
 
 .image-side-card {
     display: flex;
@@ -915,4 +870,305 @@ footer {
     height: 100%;
     object-fit: cover;
     display: block;
+}
+
+/* ==========================================================================
+   5. MODAL EASTER EGG (DANTE CANALES)
+   ========================================================================== */
+.dante-interactive-card {
+    cursor: pointer !important;
+    position: relative;
+}
+
+.dante-interactive-card:hover {
+    border-color: var(--accent-cyan) !important;
+    box-shadow: 0 0 20px rgba(0, 255, 136, 0.35) !important;
+    transform: translateY(-6px) scale(1.02);
+}
+
+.dante-modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(6, 9, 17, 0.85);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    z-index: 10000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+}
+
+.dante-modal-overlay.active {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.dante-modal-card {
+    background: var(--bg-card);
+    border: 1px solid var(--accent-cyan);
+    box-shadow: 0 0 30px rgba(0, 255, 136, 0.3);
+    border-radius: 16px;
+    padding: 28px 24px 24px 24px;
+    max-width: 460px;
+    width: 90%;
+    position: relative;
+    text-align: center;
+    transform: scale(0.85);
+    transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.dante-modal-overlay.active .dante-modal-card {
+    transform: scale(1);
+}
+
+.dante-modal-close {
+    position: absolute;
+    top: 10px;
+    right: 14px;
+    background: transparent;
+    border: none;
+    color: var(--text-muted);
+    font-size: 2rem;
+    line-height: 1;
+    cursor: pointer;
+    transition: color 0.2s ease, transform 0.2s ease;
+}
+
+.dante-modal-close:hover {
+    color: var(--accent-cyan);
+    transform: scale(1.15);
+}
+
+.dante-modal-body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+}
+
+.dante-img-wrapper {
+    width: 100%;
+    max-height: 320px;
+    border-radius: 12px;
+    overflow: hidden;
+    border: 1px solid var(--border-glow);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+}
+
+.dante-modal-img {
+    width: 100%;
+    height: 100%;
+    max-height: 320px;
+    object-fit: cover;
+    display: block;
+}
+
+.dante-modal-text {
+    font-size: 1.6rem;
+    font-weight: 800;
+    color: var(--accent-cyan);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-top: 4px;
+    text-shadow: 0 0 12px rgba(0, 255, 136, 0.6);
+}
+/* ==========================================================================
+   5. MODAL EASTER EGG HORIZONTAL CENTRADO & IMAGEN AMPLIADA (DANTE CANALES)
+   ========================================================================== */
+.dante-interactive-card {
+    cursor: pointer !important;
+    position: relative;
+}
+
+.dante-interactive-card:hover {
+    border-color: var(--accent-cyan) !important;
+    box-shadow: 0 0 20px rgba(0, 255, 136, 0.35) !important;
+    transform: translateY(-6px) scale(1.02);
+}
+
+.dante-modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(6, 9, 17, 0.90);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    z-index: 10000;
+    display: flex;
+    justify-content: center;
+    align-items: center; /* Centrado vertical perfecto */
+    padding: 20px;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+}
+
+.dante-modal-overlay.active {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+/* Tarjeta contenedora más amplia (1000px max) para dar espacio a la imagen grande */
+.dante-modal-card {
+    background: var(--bg-card);
+    border: 1px solid var(--accent-cyan);
+    box-shadow: 0 0 40px rgba(0, 255, 136, 0.35);
+    border-radius: 18px;
+    padding: 36px 32px 32px 32px;
+    max-width: 1000px;
+    width: 95%;
+    max-height: 90vh; /* Evita que sobrepase el alto de la pantalla */
+    overflow-y: auto;
+    position: relative;
+    transform: scale(0.85);
+    transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.dante-modal-overlay.active .dante-modal-card {
+    transform: scale(1);
+}
+
+.dante-modal-close {
+    position: absolute;
+    top: 14px;
+    right: 18px;
+    background: transparent;
+    border: none;
+    color: var(--text-muted);
+    font-size: 2.2rem;
+    line-height: 1;
+    cursor: pointer;
+    z-index: 10;
+    transition: color 0.2s ease, transform 0.2s ease;
+}
+
+.dante-modal-close:hover {
+    color: var(--accent-cyan);
+    transform: scale(1.15);
+}
+
+/* Distribución 50/50 equilibrada para dar más presencia a la imagen */
+.dante-modal-horizontal {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+    align-items: center; /* Alineación centrada entre texto e imagen */
+}
+
+/* Columna Izquierda (Texto) */
+.dante-info-side {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    text-align: left;
+}
+
+.dante-badge-tribute {
+    font-size: 0.72rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    background: rgba(0, 255, 136, 0.15);
+    color: var(--accent-cyan);
+    border: 1px solid var(--border-glow);
+    padding: 5px 14px;
+    border-radius: 20px;
+    margin-bottom: 10px;
+}
+
+.dante-modal-title {
+    font-size: 2rem;
+    font-weight: 800;
+    color: var(--accent-cyan);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    text-shadow: 0 0 14px rgba(0, 255, 136, 0.5);
+    margin: 0;
+}
+
+.dante-tribute-subtitle {
+    font-size: 1rem;
+    color: var(--text-muted);
+    font-weight: 600;
+    margin-top: 4px;
+    margin-bottom: 16px;
+}
+
+.dante-tribute-description {
+    background: rgba(0, 0, 0, 0.45);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 12px;
+    padding: 18px;
+    font-size: 0.9rem;
+    color: var(--text-primary);
+    line-height: 1.6;
+}
+
+.dante-tribute-description p + p {
+    margin-top: 10px;
+}
+
+.dante-tribute-description strong {
+    color: var(--accent-cyan);
+}
+
+/* Columna Derecha (Imagen Ampliada y Centrada) */
+.dante-image-side {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Eliminación de bordes y marcos en la imagen */
+.dante-img-wrapper {
+    width: 100%;
+    max-height: 480px;
+    border-radius: 12px;
+    overflow: hidden;
+    border: none; /* Se elimina el borde verde */
+    box-shadow: none; /* Se elimina la sombra del recuadro */
+    background: transparent; /* Fondo transparente */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.dante-modal-img {
+    width: 100%;
+    height: auto;
+    max-height: 480px;
+    object-fit: contain;
+    border-radius: 12px; /* Redondeado suave directo a la fotografía */
+    display: block;
+}
+/* Responsivo para móviles */
+@media (max-width: 820px) {
+    .dante-modal-horizontal {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .dante-image-side {
+        order: -1;
+    }
+
+    .dante-info-side {
+        align-items: center;
+        text-align: center;
+    }
+
+    .dante-img-wrapper,
+    .dante-modal-img {
+        max-height: 320px;
+    }
 }

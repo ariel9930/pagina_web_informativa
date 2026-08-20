@@ -100,7 +100,6 @@
                 <span class="title-white" data-es="Ejecutivo" data-en="Summary">Ejecutivo</span>
             </h2>
             <div class="grid-2 align-center">
-                <!-- RECUADRO DE TEXTO (MENOS ANCHO) -->
                 <div class="card card-highlight">
                     <div class="card-icon">
                         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
@@ -126,7 +125,6 @@
                     </p>
                 </div>
 
-                <!-- ESPACIO PARA LA IMAGEN (LADO DERECHO) -->
                 <div class="card image-side-card">
                     <div class="section-img-container">
                         <img src="static/images/resumen-ejecutivo.png" alt="Ilustración Resumen Ejecutivo"
@@ -143,7 +141,6 @@
                 <span class="title-white" data-es="del Desperdicio" data-en="Waste Challenge">del Desperdicio</span>
             </h2>
 
-            <!-- LAS 3 TARJETAS DE ESTADÍSTICAS -->
             <div class="grid-3">
                 <div class="stat-box">
                     <div class="live-indicator">
@@ -177,9 +174,7 @@
                 </div>
             </div>
 
-            <!-- FILA DEL VIDEO CON DESCRIPCIÓN DETALLADA -->
             <div class="grid-2 align-center" style="margin-top: 1.5rem;">
-                <!-- REPRODUCTOR DE YOUTUBE -->
                 <div class="card video-card">
                     <div class="video-container">
                         <iframe width="560" height="315"
@@ -190,7 +185,6 @@
                     </div>
                 </div>
 
-                <!-- DESCRIPCIÓN DETALLADA A LA DERECHA -->
                 <div class="card card-highlight">
                     <div class="card-icon">
                         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
@@ -212,7 +206,7 @@
             </div>
         </section>
 
-        <!-- SECCIÓN 3: ALINEACIÓN CON LOS ODS (ANTES SECCIÓN 4) -->
+        <!-- SECCIÓN 3: ALINEACIÓN CON LOS ODS -->
         <section class="container">
             <h2 class="section-title">
                 <span data-es="3. Alineación" data-en="3. Alignment with">3. Alineación</span>
@@ -255,7 +249,7 @@
             </div>
         </section>
 
-        <!-- SECCIÓN 4: MODELO TRADICIONAL VS JUNAWEB (ANTES SECCIÓN 3) -->
+        <!-- SECCIÓN 4: MODELO TRADICIONAL VS JUNAWEB -->
         <section class="container">
             <h2 class="section-title">
                 <span data-es="4. Modelo Tradicional" data-en="4. Traditional Model">4. Modelo Tradicional</span>
@@ -383,9 +377,7 @@
                 <span class="title-white" data-es="Sistema" data-en="Architecture">Sistema</span>
             </h2>
 
-            <!-- GRILLA DE 3 COLUMNAS: RECUADRO IZQUIERDA - IMAGEN VERTICAL - RECUADRO DERECHA -->
             <div class="grid-3 align-center" style="margin-top: 1.5rem;">
-                <!-- RECUADRO IZQUIERDO: SOFTWARE & INFRAESTRUCTURA -->
                 <div class="card card-highlight">
                     <div class="card-icon">
                         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
@@ -403,16 +395,13 @@
                     </p>
                 </div>
 
-                <!-- CONTENEDOR CENTRAL PARA LA IMAGEN VERTICAL -->
                 <div class="card vertical-image-card">
                     <div class="vertical-img-container">
-                        <!-- Reemplaza la ruta por la imagen vertical de tu proyecto (ej: esquema de hardware/trípode) -->
-                        <img src="static/images/staticimagesarquitectura-vertical.png" alt="Esquema de Arquitectura / Trípode"
-                            class="vertical-img">
+                        <img src="static/images/staticimagesarquitectura-vertical.png"
+                            alt="Esquema de Arquitectura / Trípode" class="vertical-img">
                     </div>
                 </div>
 
-                <!-- RECUADRO DERECHO: HARDWARE & CONTROL DE ACCESO -->
                 <div class="card card-highlight">
                     <div class="card-icon">
                         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
@@ -483,10 +472,9 @@
                 </div>
             </div>
         </div>
-        </section>
 
         <!-- SECCIÓN 7: EQUIPO EN TERRENO -->
-        <section class="container">
+        <section class="container" style="margin-top: 3rem;">
             <h2 class="section-title">
                 <span data-es="7. Nuestro" data-en="7. Our">7. Nuestro</span>
                 <span class="title-white" data-es="Equipo en Terreno" data-en="Team in Action">Equipo en Terreno</span>
@@ -531,7 +519,7 @@
                 </div>
             </div>
 
-            <!-- INTEGRANTES DEL EQUIPO CON ROLES ASIGNADOS -->
+            <!-- INTEGRANTES DEL EQUIPO -->
             <div class="team-members-grid" style="margin-top: 1.5rem;">
                 <div class="card team-card">
                     <div class="card-icon">
@@ -546,7 +534,9 @@
                         página web</p>
                 </div>
 
-                <div class="card team-card">
+                <!-- TARJETA INTERACTIVA DE DANTE CANALES -->
+                <div class="card team-card dante-interactive-card" id="card-dante"
+                    title="¡Haz clic para ver un mensaje especial!">
                     <div class="card-icon">
                         <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
                             stroke-width="2">
@@ -598,91 +588,127 @@
                         Ingeniero en Ciberseguridad</p>
                 </div>
             </div>
-            <!-- SECCIÓN 8: PREGUNTAS FRECUENTES (FAQ) -->
-            <section class="container">
-                <h2 class="section-title">
-                    <span data-es="8. Preguntas" data-en="8. Frequently Asked">8. Preguntas</span>
-                    <span class="title-white" data-es="Frecuentes" data-en="Questions">Frecuentes</span>
-                </h2>
-                <div class="faq-accordion">
-                    <div class="faq-item">
-                        <button class="faq-header" type="button">
-                            <span data-es="¿Qué ocurre si un estudiante no tiene teléfono celular o acceso a internet?"
-                                data-en="What happens if a student does not have a smartphone or internet access?">
-                                ¿Qué ocurre si un estudiante no tiene teléfono celular o acceso a internet?
-                            </span>
-                            <span class="faq-icon">+</span>
-                        </button>
-                        <div class="faq-content">
-                            <p data-es="El sistema permite métodos alternativos de validación. Los estudiantes pueden usar una tarjeta física con código QR estático o los inspectores pueden realizar la validación manual buscando el RUT del alumno en el sistema."
-                                data-en="The system allows alternative validation methods. Students can use a physical card with a static QR code, or inspectors can manually validate entry by searching the student's ID.">
-                                El sistema permite métodos alternativos de validación. Los estudiantes pueden usar una
-                                tarjeta física con código QR estático o los inspectores pueden realizar la validación
-                                manual buscando el RUT del alumno en el sistema.
-                            </p>
-                        </div>
-                    </div>
+        </section>
 
-                    <div class="faq-item">
-                        <button class="faq-header" type="button">
-                            <span data-es="¿Cómo evita el sistema que los alumnos se presten capturas de pantalla?"
-                                data-en="How does the system prevent students from sharing screenshots?">
-                                ¿Cómo evita el sistema que los alumnos se presten capturas de pantalla?
-                            </span>
-                            <span class="faq-icon">+</span>
-                        </button>
-                        <div class="faq-content">
-                            <p data-es="Los códigos QR generados son dinámicos y cambian constantemente. Además, al escanearse en la estación del trípode, el sistema verifica la hora exacta y marca el ticket como 'Consumido' en tiempo real, bloqueando lecturas duplicadas."
-                                data-en="Generated QR codes are dynamic and change constantly. Additionally, when scanned at the tripod station, the system checks the exact timestamp and marks the ticket as 'Used' in real time, blocking duplicate reads.">
-                                Los códigos QR generados son dinámicos y cambian constantemente. Además, al escanearse
-                                en la estación del trípode, el sistema verifica la hora exacta y marca el ticket como
-                                'Consumido' en tiempo real, bloqueando lecturas duplicadas.
-                            </p>
-                        </div>
-                    </div>
-
-                    <div class="faq-item">
-                        <button class="faq-header" type="button">
-                            <span data-es="¿Qué infraestructura requiere el colegio para implementar JunaWeb?"
-                                data-en="What infrastructure does the school need to implement JunaWeb?">
-                                ¿Qué infraestructura requiere el colegio para implementar JunaWeb?
-                            </span>
-                            <span class="faq-icon">+</span>
-                        </button>
-                        <div class="faq-content">
-                            <p data-es="Solo se necesita conexión a internet básica (Wi-Fi o datos móviles) y un smartphone montado sobre un trípode estándar en el acceso del comedor. No se requiere costoso hardware industrial."
-                                data-en="Only a basic internet connection (Wi-Fi or mobile data) and a smartphone mounted on a standard tripod at the cafeteria entrance are required. No expensive industrial hardware is needed.">
-                                Solo se necesita conexión a internet básica (Wi-Fi o datos móviles) y un smartphone
-                                montado sobre un trípode estándar en el acceso del comedor. No se requiere costoso
-                                hardware industrial.
-                            </p>
-                        </div>
-                    </div>
-
-                    <div class="faq-item">
-                        <button class="faq-header" type="button">
-                            <span data-es="¿Cómo ayuda la plataforma a reducir el desperdicio de comida?"
-                                data-en="How does the platform help reduce food waste?">
-                                ¿Cómo ayuda la plataforma a reducir el desperdicio de comida?
-                            </span>
-                            <span class="faq-icon">+</span>
-                        </button>
-                        <div class="faq-content">
-                            <p data-es="Al requerir confirmaciones o reservas previas de las raciones, la cocina conoce con anticipación el número exacto de platos a preparar, reduciendo la sobreproducción y el desperdicio de insumos."
-                                data-en="By requiring meal reservations, the kitchen team knows the exact number of meals to prepare in advance, preventing overproduction and food waste.">
-                                Al requerir confirmaciones o reservas previas de las raciones, la cocina conoce con
-                                anticipación el número exacto de platos a preparar, reduciendo la sobreproducción y el
-                                desperdicio de insumos.
-                            </p>
-                        </div>
+        <!-- SECCIÓN 8: PREGUNTAS FRECUENTES (FAQ) -->
+        <section class="container">
+            <h2 class="section-title">
+                <span data-es="8. Preguntas" data-en="8. Frequently Asked">8. Preguntas</span>
+                <span class="title-white" data-es="Frecuentes" data-en="Questions">Frecuentes</span>
+            </h2>
+            <div class="faq-accordion">
+                <div class="faq-item">
+                    <button class="faq-header" type="button">
+                        <span data-es="¿Qué ocurre si un estudiante no tiene teléfono celular o acceso a internet?"
+                            data-en="What happens if a student does not have a smartphone or internet access?">
+                            ¿Qué ocurre si un estudiante no tiene teléfono celular o acceso a internet?
+                        </span>
+                        <span class="faq-icon">+</span>
+                    </button>
+                    <div class="faq-content">
+                        <p data-es="El sistema permite métodos alternativos de validación. Los estudiantes pueden usar una tarjeta física con código QR estático o los inspectores pueden realizar la validación manual buscando el RUT del alumno en el sistema."
+                            data-en="The system allows alternative validation methods. Students can use a physical card with a static QR code, or inspectors can manually validate entry by searching the student's ID.">
+                            El sistema permite métodos alternativos de validación. Los estudiantes pueden usar una
+                            tarjeta física con código QR estático o los inspectores pueden realizar la validación
+                            manual buscando el RUT del alumno en el sistema.
+                        </p>
                     </div>
                 </div>
-            </section>
 
-            <!-- FOOTER -->
-            <footer>
-                <p>© JunaWeb - Project Information & Documentation</p>
-            </footer>
+                <div class="faq-item">
+                    <button class="faq-header" type="button">
+                        <span data-es="¿Cómo evita el sistema que los alumnos se presten capturas de pantalla?"
+                            data-en="How does the system prevent students from sharing screenshots?">
+                            ¿Cómo evita el sistema que los alumnos se presten capturas de pantalla?
+                        </span>
+                        <span class="faq-icon">+</span>
+                    </button>
+                    <div class="faq-content">
+                        <p data-es="Los códigos QR generados son dinámicos y cambian constantemente. Además, al escanearse en la estación del trípode, el sistema verifica la hora exacta y marca el ticket como 'Consumido' en tiempo real, bloqueando lecturas duplicadas."
+                            data-en="Generated QR codes are dynamic and change constantly. Additionally, when scanned at the tripod station, the system checks the exact timestamp and marks the ticket as 'Used' in real time, blocking duplicate reads.">
+                            Los códigos QR generados son dinámicos y cambian constantemente. Además, al escanearse
+                            en la estación del trípode, el sistema verifica la hora exacta y marca el ticket como
+                            'Consumido' en tiempo real, bloqueando lecturas duplicadas.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-header" type="button">
+                        <span data-es="¿Qué infraestructura requiere el colegio para implementar JunaWeb?"
+                            data-en="What infrastructure does the school need to implement JunaWeb?">
+                            ¿Qué infraestructura requiere el colegio para implementar JunaWeb?
+                        </span>
+                        <span class="faq-icon">+</span>
+                    </button>
+                    <div class="faq-content">
+                        <p data-es="Solo se necesita conexión a internet básica (Wi-Fi o datos móviles) y un smartphone montado sobre un trípode estándar en el acceso del comedor. No se requiere costoso hardware industrial."
+                            data-en="Only a basic internet connection (Wi-Fi or mobile data) and a smartphone mounted on a standard tripod at the cafeteria entrance are required. No expensive industrial hardware is needed.">
+                            Solo se necesita conexión a internet básica (Wi-Fi o datos móviles) y un smartphone
+                            montado sobre un trípode estándar en el acceso del comedor. No se requiere costoso
+                            hardware industrial.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-header" type="button">
+                        <span data-es="¿Cómo ayuda la plataforma a reducir el desperdicio de comida?"
+                            data-en="How does the platform help reduce food waste?">
+                            ¿Cómo ayuda la plataforma a reducir el desperdicio de comida?
+                        </span>
+                        <span class="faq-icon">+</span>
+                    </button>
+                    <div class="faq-content">
+                        <p data-es="Al requerir confirmaciones o reservas previas de las raciones, la cocina conoce con anticipación el número exacto de platos a preparar, reduciendo la sobreproducción y el desperdicio de insumos."
+                            data-en="By requiring meal reservations, the kitchen team knows the exact number of meals to prepare in advance, preventing overproduction and food waste.">
+                            Al requerir confirmaciones o reservas previas de las raciones, la cocina conoce con
+                            anticipación el número exacto de platos a preparar, reduciendo la sobreproducción y el
+                            desperdicio de insumos.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- FOOTER -->
+        <footer>
+            <p>© JunaWeb - Project Information & Documentation</p>
+        </footer>
+    </div>
+
+    <!-- VENTANA EMERGENTE (MODAL HORIZONTAL) DANTE CANALES -->
+    <div id="modal-dante" class="dante-modal-overlay">
+        <div class="dante-modal-card">
+            <button id="close-dante-modal" class="dante-modal-close" title="Cerrar">&times;</button>
+            <div class="dante-modal-horizontal">
+                <!-- COLUMNA IZQUIERDA: MENSAJE CONMEMORATIVO AMPLIADO -->
+                <div class="dante-info-side">
+                    <div class="dante-badge-tribute">Homenaje & Conmemoración</div>
+                    <h3 class="dante-modal-title">Róbate el cielo</h3>
+                    <p class="dante-tribute-subtitle">En honor a Dante Canales</p>
+
+                    <div class="dante-tribute-description">
+                        <p>Agradecemos profundamente su pilar fundamental como <strong>Desarrollador de la Estructura
+                                HTML</strong> y cofundador del proyecto <strong>JunaWeb</strong>.</p>
+                        <p>Su visión arquitectónica, dedicación incansable y destreza en la estructuración de código
+                            fueron los cimientos indispensables para transformar una idea en una solución web real,
+                            robusta y funcional.</p>
+                        <p>Más allá del código, su entrega, espíritu colaborativo y liderazgo dejaron una marca
+                            imborrable en la identidad de nuestro grupo de trabajo. Su legado sigue presente en cada
+                            línea de esta plataforma.</p>
+                    </div>
+                </div>
+
+                <!-- COLUMNA DERECHA: IMAGEN -->
+                <div class="dante-image-side">
+                    <div class="dante-img-wrapper">
+                        <img src="static/images/6982.png" alt="Conmemoración Dante Canales" class="dante-modal-img"
+                            onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1534447677768-be436bb09401?q=80&w=1000&auto=format&fit=crop';">
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 
     <!-- WIDGET ASISTENTE VIRTUAL CYBERPUNK ("JUNABOT") -->
@@ -770,7 +796,7 @@
                 }
             }
 
-            toggleBtn.addEventListener('click', () => {
+            toggleBtn?.addEventListener('click', () => {
                 currentLang = currentLang === 'es' ? 'en' : 'es';
                 langLabel.textContent = currentLang === 'es' ? 'English' : 'Español';
                 updateLanguage();
@@ -778,7 +804,7 @@
 
             // 2. TOGGLE DE TEMA DUAL (DARK / LIGHT)
             const toggleThemeBtn = document.getElementById('toggle-theme');
-            toggleThemeBtn.addEventListener('click', () => {
+            toggleThemeBtn?.addEventListener('click', () => {
                 document.body.classList.toggle('light-theme');
             });
 
@@ -820,7 +846,7 @@
             const btnOfflineText = document.getElementById('btn-offline-text');
             let isOffline = false;
 
-            toggleOfflineBtn.addEventListener('click', () => {
+            toggleOfflineBtn?.addEventListener('click', () => {
                 isOffline = !isOffline;
 
                 if (isOffline) {
@@ -1027,6 +1053,37 @@
                         content.style.maxHeight = content.scrollHeight + 30 + 'px';
                     }
                 });
+            });
+
+            // 10. LÓGICA MODAL DANTE CANALES
+            const cardDante = document.getElementById('card-dante');
+            const modalDante = document.getElementById('modal-dante');
+            const closeDanteModal = document.getElementById('close-dante-modal');
+
+            if (cardDante && modalDante) {
+                cardDante.addEventListener('click', () => {
+                    modalDante.classList.add('active');
+                });
+            }
+
+            if (closeDanteModal && modalDante) {
+                closeDanteModal.addEventListener('click', () => {
+                    modalDante.classList.remove('active');
+                });
+            }
+
+            if (modalDante) {
+                modalDante.addEventListener('click', (e) => {
+                    if (e.target === modalDante) {
+                        modalDante.classList.remove('active');
+                    }
+                });
+            }
+
+            document.addEventListener('keydown', (e) => {
+                if (e.key === 'Escape' && modalDante?.classList.contains('active')) {
+                    modalDante.classList.remove('active');
+                }
             });
         });
     </script>
