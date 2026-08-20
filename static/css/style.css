@@ -117,6 +117,8 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    flex-wrap: wrap;
+    gap: 10px;
     padding: 20px 0;
     margin-bottom: 40px;
 }
@@ -133,7 +135,7 @@ header {
 
 .logo-img {
     height: 90px;
-    width: 150px;
+    width: auto;
 }
 
 .logo-text span {
@@ -873,112 +875,6 @@ footer {
 }
 
 /* ==========================================================================
-   5. MODAL EASTER EGG (DANTE CANALES)
-   ========================================================================== */
-.dante-interactive-card {
-    cursor: pointer !important;
-    position: relative;
-}
-
-.dante-interactive-card:hover {
-    border-color: var(--accent-cyan) !important;
-    box-shadow: 0 0 20px rgba(0, 255, 136, 0.35) !important;
-    transform: translateY(-6px) scale(1.02);
-}
-
-.dante-modal-overlay {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100vw;
-    height: 100vh;
-    background: rgba(6, 9, 17, 0.85);
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
-    z-index: 10000;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    opacity: 0;
-    pointer-events: none;
-    transition: opacity 0.3s ease;
-}
-
-.dante-modal-overlay.active {
-    opacity: 1;
-    pointer-events: auto;
-}
-
-.dante-modal-card {
-    background: var(--bg-card);
-    border: 1px solid var(--accent-cyan);
-    box-shadow: 0 0 30px rgba(0, 255, 136, 0.3);
-    border-radius: 16px;
-    padding: 28px 24px 24px 24px;
-    max-width: 460px;
-    width: 90%;
-    position: relative;
-    text-align: center;
-    transform: scale(0.85);
-    transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-}
-
-.dante-modal-overlay.active .dante-modal-card {
-    transform: scale(1);
-}
-
-.dante-modal-close {
-    position: absolute;
-    top: 10px;
-    right: 14px;
-    background: transparent;
-    border: none;
-    color: var(--text-muted);
-    font-size: 2rem;
-    line-height: 1;
-    cursor: pointer;
-    transition: color 0.2s ease, transform 0.2s ease;
-}
-
-.dante-modal-close:hover {
-    color: var(--accent-cyan);
-    transform: scale(1.15);
-}
-
-.dante-modal-body {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 16px;
-}
-
-.dante-img-wrapper {
-    width: 100%;
-    max-height: 320px;
-    border-radius: 12px;
-    overflow: hidden;
-    border: 1px solid var(--border-glow);
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
-}
-
-.dante-modal-img {
-    width: 100%;
-    height: 100%;
-    max-height: 320px;
-    object-fit: cover;
-    display: block;
-}
-
-.dante-modal-text {
-    font-size: 1.6rem;
-    font-weight: 800;
-    color: var(--accent-cyan);
-    text-transform: uppercase;
-    letter-spacing: 2px;
-    margin-top: 4px;
-    text-shadow: 0 0 12px rgba(0, 255, 136, 0.6);
-}
-/* ==========================================================================
    5. MODAL EASTER EGG HORIZONTAL CENTRADO & IMAGEN AMPLIADA (DANTE CANALES)
    ========================================================================== */
 .dante-interactive-card {
@@ -1135,9 +1031,9 @@ footer {
     max-height: 480px;
     border-radius: 12px;
     overflow: hidden;
-    border: none; /* Se elimina el borde verde */
-    box-shadow: none; /* Se elimina la sombra del recuadro */
-    background: transparent; /* Fondo transparente */
+    border: none;
+    box-shadow: none;
+    background: transparent;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -1148,9 +1044,10 @@ footer {
     height: auto;
     max-height: 480px;
     object-fit: contain;
-    border-radius: 12px; /* Redondeado suave directo a la fotografía */
+    border-radius: 12px;
     display: block;
 }
+
 /* Responsivo para móviles */
 @media (max-width: 820px) {
     .dante-modal-horizontal {
@@ -1170,5 +1067,28 @@ footer {
     .dante-img-wrapper,
     .dante-modal-img {
         max-height: 320px;
+    }
+}
+
+/* ==========================================================================
+   6. RESPONSIVO ESPECÍFICO PARA PANTALLAS PEQUEÑAS (MÓVILES)
+   ========================================================================== */
+@media (max-width: 600px) {
+    .logo-img {
+        height: 42px;
+    }
+
+    .logo-text {
+        font-size: 1.1rem;
+    }
+
+    .nav-controls {
+        gap: 6px;
+    }
+
+    .theme-btn,
+    .lang-btn {
+        padding: 6px 10px;
+        font-size: 0.75rem;
     }
 }
